@@ -1,0 +1,553 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(17, 17, 17, 0.85); /* semi-transparent */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.6);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #fefefe, #e3e3e3);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.join-btn {
+  background: linear-gradient(135deg, #00f2ea, #00c3ff);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,242,234,0.6);
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  background: url(/images/1.JPG) no-repeat center center/cover;
+  background-size: cover;
+  overflow: hidden;
+  animation: heroZoom 20s infinite alternate ease-in-out;
+
+  /* center the content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full screen */
+  text-align: center;
+  padding: 0 20px; /* only side padding */
+}
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.hero-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  padding: 80px 50px;
+  border-radius: 12px;
+  animation: fadeUp 1.5s ease-in-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 92px;
+  
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 3s infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+  to { text-shadow: 0 0 25px rgba(255, 255, 255, 0.9); }
+}
+
+.hero p {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 750px;
+  margin: 0 auto 40px;
+  color: #f1f1f1;
+  line-height: 1.8;
+  font-family: 'Inter', sans-serif;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 14px 28px;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  background: transparent;
+  box-shadow: 0 5px 15px rgba(255,126,95,0.6);
+}
+
+.buttons a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.8);
+}
+
+
+        /* Challenge Section */
+        section.challenge {
+            padding: 60px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .challenge-text {
+            flex: 1;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .challenge-text h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .challenge-text p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .challenge-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .challenge-text ul li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #eee;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .challenge-text ul li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: #00f2ea;
+        }
+
+        .challenge-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .challenge-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 8px;
+            background: #333;
+            padding: 0px;
+        }
+
+        /* --- Benefits Section --- */
+        .benefits-section {
+            background-color: #0d0d0d;
+            color: #fff;
+            padding: 100px 20px 80px;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        .benefits-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a0a0a0;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .benefits-title {
+            font-size: 56px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .benefits-subtitle {
+            font-size: 18px;
+            color: #b0b0b0;
+            max-width: 650px;
+            margin: 0 auto 60px;
+            line-height: 1.6;
+        }
+
+        /* --- Cards Container --- */
+        .benefits-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* --- Individual Cards --- */
+        .card {
+            background-color: #262626;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .mentorship-card {
+            grid-column: span 1;
+            min-height: 380px;
+        }
+
+        /* The Placeholder Card with Shapes */
+        .placeholder-card {
+            grid-column: span 2;
+            min-height: 380px;
+            background-color: #3f3f3f;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            gap: 15px;
+        }
+
+        .figma-text {
+            color: #a0a0a0;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .placeholder-shapes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            max-width: 450px;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shape {
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            opacity: 0.8;
+        }
+
+        .shape:nth-child(1) {
+            background-color: #5d5d5d;
+        }
+
+        .shape:nth-child(2) {
+            background-color: #6a6a6a;
+        }
+
+        .shape:nth-child(3) {
+            background-color: #787878;
+        }
+
+        .shape:nth-child(4) {
+            background-color: #888888;
+            grid-column: span 2;
+        }
+
+        .shape:nth-child(5) {
+            background-color: #999999;
+        }
+
+        /* The Funding and Networking cards */
+        .funding-card,
+        .networking-card {
+            grid-column: span 1;
+            min-height: 200px;
+            padding: 30px;
+        }
+
+        /* --- Card Content --- */
+        .card-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #909090;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        .card-link {
+            font-size: 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 16px;
+            margin-left: 5px;
+            font-weight: normal;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .benefits-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .placeholder-card {
+                grid-column: span 2;
+                padding: 40px;
+            }
+
+            .funding-card,
+            .networking-card {
+                grid-column: span 1;
+                min-height: 300px;
+            }
+
+            .placeholder-shapes {
+                max-width: 500px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .shape:nth-child(4) {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .benefits-title {
+                font-size: 40px;
+            }
+
+            .benefits-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .card,
+            .placeholder-card,
+            .funding-card,
+            .networking-card {
+                grid-column: span 1;
+                min-height: auto;
+                padding: 30px;
+            }
+            
+            .placeholder-card {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .figma-text {
+                position: static;
+                align-self: center;
+                margin-bottom: 10px;
+            }
+
+            .placeholder-shapes {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+            .shape {
+                height: 100px;
+            }
+        }
+        .past-events {
+    padding: 60px 40px;
+    background-color: #111;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.past-events .events-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.past-events .events-subtitle {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.events-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.event-card {
+    background-color: #262626;
+    border-radius: 8px;
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.event-card img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .events-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        width: 90%;
+    }
+}
